@@ -1,0 +1,40 @@
+body.modal-open {
+  @include mq(notDesktop) {
+    overflow: hidden;
+  }
+}
+
+.modal {
+  text-align: center;
+
+  background-color: var(--bgc-second);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+
+  transform: scale(1);
+  transition: transform var(--transition-time) var(--transition-function);
+}
+
+.modal__title {
+  margin-bottom: 20px;
+
+  @include font-size(28, 32, 0.05);
+
+  @include mq(tablet) {
+    @include font-size(32, 36, 0.05);
+  }
+  @include mq(desktop) {
+    @include font-size(40, 46, 0.05);
+  }
+}
+
+.modal__button {
+  @include font-size(20, 24, 0.05);
+}
+
+.modal__button-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}

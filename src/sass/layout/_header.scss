@@ -1,0 +1,247 @@
+.overflow--is-hidden {
+  overflow: hidden;
+}
+
+.header {
+  @include mq(mobile-only) {
+    position: fixed;
+    z-index: 2;
+
+    width: 100%;
+    height: 60px;
+
+    background-color: var(--bgc-third);
+  }
+}
+
+.header__container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include mq(mobile-only) {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+
+    padding-top: 6px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include mq(tablet) {
+    padding-top: 37px;
+  }
+
+  @include mq(desktop) {
+    padding-left: 46px;
+  }
+}
+
+.navigation__list {
+  display: flex;
+  justify-content: space-between;
+  min-width: 541px;
+
+  @include mq(notDesktop) {
+    display: none;
+  }
+}
+
+.navigation__item {
+  flex-grow: 1;
+}
+
+.navigation__link {
+  padding: 12px 0;
+
+  @include font-size(16, 21);
+  font-weight: 700;
+  color: var(--text-fourth-color);
+
+  transition: color var(--transition-time) var(--transition-function);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.header__buttons-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mq(tablet-only) {
+    width: 210px;
+  }
+}
+
+.button-mobmenu {
+  padding: 0;
+  padding-top: 5px;
+  width: 30px;
+  height: 30px;
+
+  color: var(--accent-color);
+
+  border: none;
+  background-color: transparent;
+
+  @include mq(desktop) {
+    display: none;
+  }
+}
+
+.icon-menu {
+  .button-mobmenu:hover &,
+  .button-mobmenu:focus & {
+    color: var(--text-fourth-color);
+  }
+
+  .button-mobmenu & {
+    opacity: 1;
+    stroke: currentColor;
+    transition: color var(--transition-time) var(--transition-function);
+  }
+
+  .button-mobmenu.is-open & {
+    opacity: 0;
+    transition: opacity 100ms var(--transition-function);
+
+    @include mq(tablet-only) {
+      display: block;
+    }
+  }
+}
+
+.header__button {
+  display: flex;
+  align-items: center;
+
+  padding: 12px 33px;
+  min-width: 160px;
+
+  font-weight: 700;
+  @include font-size(16, 21);
+
+  @include mq(mobile-only) {
+    display: none;
+  }
+}
+
+.header__button-text {
+  margin-right: 25px;
+
+  @include mq(tablet) {
+    margin-right: 15px;
+  }
+  flex-grow: 1;
+}
+
+.header__button-icon {
+  display: block;
+  padding-top: 2px;
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  transform: translateX(125%);
+  transition: transform var(--transition-time) var(--transition-function);
+
+  min-width: 250px;
+  min-height: 100vh;
+  padding-top: 60px;
+  padding-bottom: 162px;
+
+  background-color: var(--bgc-mobile);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
+  &.is-open {
+    transform: translateX(0);
+
+    @include mq(desktop) {
+      display: none;
+    }
+  }
+
+  @include mq(tablet) {
+    min-width: 254px;
+    padding-bottom: 680px;
+  }
+}
+
+.mobile-menu__close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  @include mq(tablet) {
+    right: 25px;
+  }
+}
+
+.mobile-menu__button-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-menu__button {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  padding-left: 58px;
+  padding-right: 41px;
+  margin-bottom: 19px;
+  min-width: 209px;
+
+  font-weight: 700;
+  @include font-size(16, 21);
+
+  @include mq(tablet) {
+    min-width: 186px;
+    padding-left: 52px;
+    padding-right: 42px;
+  }
+}
+
+.mobile-menu__item {
+  background-color: inherit;
+  transition: background-color var(--transition-time) var(--transition-function);
+  border-top: 1px solid #e18298;
+
+  &:last-child {
+    border-bottom: 1px solid #e18298;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--bgc-main);
+  }
+}
+
+.mobile-menu__link {
+  display: block;
+  height: auto;
+  padding-left: 21px;
+
+  @include font-size(14, 18);
+
+  .mobile-menu__item:hover .mobile-menu__link {
+    color: var(--accent-color);
+  }
+}

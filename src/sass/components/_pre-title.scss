@@ -1,0 +1,20 @@
+.pre-title {
+  margin-bottom: 15px;
+
+  font-family: Titan One, sans-serif;
+  font-weight: 400;
+
+  text-align: center; //не уверен, на усмотрение тимлида
+  text-transform: uppercase;
+  color: var(--text-third-color);
+
+  @include font-size(18, 21);
+
+  @include mq(tablet) {
+    @include font-size(26, 30);
+  }
+
+  @include mq(desktop) {
+    @include font-size(30, 34, 0.04);
+  }
+}

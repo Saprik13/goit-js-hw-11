@@ -1,0 +1,37 @@
+.scrollup {
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+  z-index: 10;
+  display: none;
+
+  padding: 7.5px 10px;
+
+  @include font-size(28, 28);
+  text-align: center;
+  color: var(--bgc-main);
+
+  background-color: var(--bgc-mobile);
+  border-radius: 50%;
+
+  transition: background-color var(--transition-time) var(--transition-function);
+  cursor: pointer;
+
+  @include mq(mobile-only) {
+    @include visuallity-hidden();
+  }
+
+  @include mq(tablet) {
+    right: 40px;
+    bottom: 20px;
+  }
+
+  @include mq(desktop) {
+    right: 60px;
+    bottom: 40px;
+  }
+}
+
+.scrollup:hover {
+  background-color: var(--accent-color);
+}

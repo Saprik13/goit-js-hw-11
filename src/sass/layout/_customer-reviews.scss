@@ -1,0 +1,285 @@
+.customer-reviews {
+    padding-top: 43px;
+    padding-bottom: 56px;
+
+    @include mq(tablet) {
+        padding-top: 60px;
+        padding-bottom: 79px;
+    }
+
+    @include mq(desktop) {
+        padding-top: 66px;
+        padding-bottom: 82px;
+    }
+}
+
+.customer-reviews__title {
+    @include visuallity-hidden();
+}
+
+.customer-reviews__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.customer-reviews__text-inner {
+    position: relative;
+
+    margin-top: 29px;
+    margin-bottom: 30px;
+
+    text-align: center;
+    background-color: var(--slider-bgc);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 28px;
+        left: 61px;
+
+        width: 54px;
+        height: 40px;
+
+        background-image: url('../images/customer-reviews/bracket-icon.svg');
+
+        @include mq(tablet) {
+            top: 30px;
+            left: 40px;
+        }
+
+        @include mq(desktop) {
+            top: 32px;
+            left: 50px;
+        }
+    }
+
+    @include mq(tablet) {
+        margin-top: 19px;
+        margin-bottom: 50px;
+    }
+
+    @include mq(desktop) {
+        margin-top: 15px;
+        margin-bottom: 34px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 32px;
+        height: 4px;
+        margin-top: 30px;
+        background: url('../images/customer-reviews/three-dots-x1.png');
+        transform: translateX(-50%);
+        @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+            background: url('../images/customer-reviews/three-dots.png');
+            width: 64px;
+            height: 8px;
+        }
+
+        @include mq(tablet) {
+            margin-top: 24px;
+        }
+
+        @include mq(desktop) {
+            margin-top: 15px;
+        }
+    }
+}
+
+.customer-reviews__decorate {
+    margin: 43px 50px 20px 50px;
+    background: repeating-linear-gradient(
+        0deg,
+        var(--figure-line-color) 0px,
+        rgb(255, 255, 255, 0) 1px,
+        rgb(255, 255, 255, 0) 31px
+    );
+    background-size: minmax(min-content, max-content);
+
+    @include mq(tablet) {
+        margin: 47px 36px 28px 60px;
+    }
+
+    @include mq(desktop) {
+        margin: 47px 54px 32px 59px;
+    }
+}
+
+.customer-reviews__text {
+    position: relative;
+    padding-left: 7px;
+    padding-right: 16px;
+
+    font-weight: 500;
+    @include font-size(12, 30.6);
+
+    color: var(--text-main-color);
+
+    @include mq(tablet) {
+        padding-left: 80px;
+        padding-right: 80px;
+
+        @include font-size(14, 30, 0.04);
+    }
+
+    @include mq(desktop) {
+        padding-left: 87px;
+        padding-right: 89px;
+
+        @include font-size(16, 30, 0.04);
+    }
+}
+
+.customer-reviews__label {
+    margin-top: 26px;
+    margin-bottom: 42px;
+    font-weight: 500;
+    @include font-size(14, 26);
+
+    color: var(--text-main-color);
+
+    @include mq(tablet) {
+        margin-top: 0px;
+        @include font-size(16, 30);
+    }
+
+    @include mq(desktop) {
+        @include font-size(20, 37);
+    }
+}
+
+/* стили для корневого элемента слайдера */
+.slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq(tablet) {
+        max-width: 620px;
+    }
+
+    @include mq(desktop) {
+        max-width: 926px;
+    }
+}
+
+/* стили для wrapper */
+.slider__wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+/* стили для элемента, в котором непосредственно расположены элементы (слайды) */
+.slider__items {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* класс для отключения transition */
+.transition-none {
+    transition: none;
+}
+
+/* стили для элементов */
+.slider__item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+}
+
+/* кнопки Prev и Next */
+.slider__control {
+    position: absolute;
+    top: 90%;
+    width: 50px;
+    height: 100px;
+    transform: translateY(-50%);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+    opacity: 0.5;
+    user-select: none;
+
+    &:hover {
+        color: #fff;
+        background-color: var(--bgc-third);
+        text-decoration: none;
+        opacity: 1;
+    }
+}
+
+.slider__control_show {
+    display: flex;
+}
+
+.slider__control_prev {
+    top: 45%;
+    left: 0;
+
+    border-radius: 10px;
+}
+
+.slider__control_next {
+    top: 45%;
+    right: 0;
+
+    border-radius: 10px;
+}
+
+.slider__control::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.slider__control_prev::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='000000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.slider__control_next::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='000000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+/* Индикаторы */
+.slider__indicators {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin: 0 15%;
+    list-style: none;
+    user-select: none;
+}
+
+.slider__indicator {
+    flex: 0 1 auto;
+    width: 12px;
+    height: 12px;
+    margin-right: 9px;
+    margin-left: 9px;
+    background-color: var(--slider-dots);
+    background-clip: padding-box;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.slider__indicator_active {
+    background-image: url('../images/customer-reviews/home.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border-radius: 0;
+}

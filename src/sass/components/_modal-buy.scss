@@ -1,0 +1,138 @@
+.buy-modal {
+  position: relative;
+
+  padding: 40px 40px;
+
+  .backdrop--hidden & {
+    transform: scale(1.1);
+  }
+
+  @include mq(mobile-only) {
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include mq(tablet) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    max-width: 450px;
+
+    transform: translate(-50%, -50%) scale(1);
+
+    .backdrop--hidden & {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+  @media screen and (max-height: 820px) and (orientation: landscape) {
+    position: static;
+
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+
+    transform: scale(1);
+
+    .backdrop--hidden & {
+      transform: scale(1.1);
+    }
+  }
+
+  @include mq(desktop) {
+    max-width: 550px;
+  }
+}
+
+.buy-modal__description {
+  font-weight: 700;
+  margin-bottom: 20px;
+  @include font-size(16, 20, 0.03);
+  color: var(--accent-color);
+}
+
+.buy-form__name,
+.buy-form__phone,
+.buy-form__email,
+.buy-form__address,
+.buy-form__product {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.buy-form__address {
+  margin-bottom: 20px;
+}
+
+.buy-form__product {
+  margin-bottom: 20px;
+}
+
+.buy-form__text {
+  margin-bottom: 5px;
+  @include font-size(14);
+}
+
+.buy-form__input,
+.buy-form__quantity {
+  padding-left: 5px;
+  height: 30px;
+  border: 1px solid var(--text-second-color);
+  border-radius: 3px;
+  transition: border-color var(--transition-time) var(--transition-function);
+
+  &:focus {
+    border-color: var(--bgc-fourth);
+  }
+
+  @include mq(mobile-only) {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  @include mq(tablet) {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    width: 100%;
+  }
+}
+
+.buy-form__quantity {
+  min-width: 80px;
+  margin-right: 10px;
+}
+
+.buy-form__input {
+  @include mq(mobile-only) {
+    width: 100%;
+  }
+}
+
+.buy-form__product-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin-left: auto;
+}
+
+.buy-form__product-item {
+  display: flex;
+  min-width: 150px;
+
+  white-space: nowrap;
+
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+}
+
+.buy-form__success-message {
+  margin-top: 20px;
+  @include font-size(30, 20, 0.03);
+  color: var(--accent-color);
+}

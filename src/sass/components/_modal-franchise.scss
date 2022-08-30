@@ -1,0 +1,162 @@
+.franchise-modal {
+  position: relative;
+
+  padding: 20px;
+
+  .backdrop--hidden & {
+    transform: scale(1.1);
+  }
+
+  @include mq(mobile-only) {
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include mq(tablet) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    max-width: 450px;
+
+    transform: translate(-50%, -50%) scale(1);
+
+    .backdrop--hidden & {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+  @media screen and (max-height: 800px) and (orientation: landscape) {
+    position: static;
+
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+
+    transform: scale(1);
+
+    .backdrop--hidden & {
+      transform: scale(1.1);
+    }
+  }
+  @include mq(desktop) {
+    max-width: 528px;
+  }
+}
+
+.franchise-modal__list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  text-align: center;
+}
+
+.franchise-modal__item {
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+}
+
+.franchise-modal__text {
+  margin-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  line-height: 25px;
+  text-align: start;
+}
+
+.franchise-form {
+  @include mq(tablet) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.franchise-form__field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include font-size(12, 12, 0.01);
+
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  &:nth-child(4) {
+    margin-bottom: 20px;
+  }
+}
+
+.franchise-form__inner {
+  position: relative;
+
+  width: 100%;
+  margin-top: 4px;
+}
+
+.franchise-form__input {
+  width: 100%;
+  height: 40px;
+  padding: 0 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  transition: border-color var(--transition-time) var(--transition-function);
+
+  &:focus {
+    border: 1px solid var(--bgc-fourth);
+    border-radius: 4px;
+  }
+}
+
+.franchise-form__icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+
+  transform: translateY(-50%);
+  transition: fill var(--transition-time) var(--transition-function);
+
+  .franchise-form__input:focus + & {
+    fill: var(--bgc-fifth);
+  }
+}
+
+.franchise-form__comment {
+  width: 100%;
+  margin-top: 4px;
+  padding: 11px 15px;
+
+  @include font-size(12, 14);
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  resize: none;
+  transition: border-color var(--transition-time) var(--transition-function);
+
+  &::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+  }
+
+  &:focus {
+    border: 1px solid var(--bgc-fourth);
+    border-radius: 4px;
+  }
+}
+
+.franchise-form__agreement-link {
+  margin-left: 3px;
+
+  text-decoration: underline;
+  color: var(--bgc-fourth);
+}
+
+.franchise-form__success-message {
+  font-size: 40px;
+}

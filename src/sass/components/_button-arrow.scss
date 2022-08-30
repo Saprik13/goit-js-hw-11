@@ -1,0 +1,37 @@
+.button-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  border: none;
+  background-color: var(--bgc-main);
+  color: var(--accent-color);
+
+  transition: color var(--transition-time) var(--transition-function),
+    background-color var(--transition-time) var(--transition-function),
+    transform var(--transition-time) var(--transition-function);
+
+  &:active {
+    transform: rotate(-90deg);
+    background-color: var(--accent-color);
+    color: var(--text-fourth-color);
+  }
+
+  &--small {
+    width: 18px;
+    height: 18px;
+
+    @include mq(desktop) {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
+
+.button-arrow__icon {
+  fill: currentColor;
+}

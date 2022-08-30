@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ice Cream</title>
+    <meta name="description" content="ice-cream product franchise">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="shortcut icon" type="image/ico" href="./images/favicon.ico" />
+  </head>
+  <body>
+    <include src="./partials/header.html"></include>
+    <main>
+      <include src="./partials/hero.html"></include>
+      <include src="./partials/products.html"></include>
+      <include src="./partials/about.html"></include>
+      <include src="./partials/advantages.html"></include>
+      <include src="./partials/gallery.html"></include>
+      <include src="./partials/customer-reviews.html"></include>
+      <include src="./partials/contacts.html"></include>
+    </main>
+    <include src="./partials/footer.html"></include>
+
+    <include src="./partials/modal-buy.html"></include>
+    <include src="./partials/modal-video.html"></include>
+    <include src="./partials/modal-location.html"></include>
+    <include src="./partials/modal-franchise.html"></include>
+
+    <script src="./index.js"></script>
+
+    <!-- Скрипт мобильного меню -->
+    <script src="./js/mobile-menu.js" type="module"></script>
+    <script src="./js/navigation.js" type="module"></script>
+    <!-- Скрипт модального окна -->
+    <script src="./js/modal.js" type="module"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script defer src="./js/close-modal.js" type="module"></script>
+    <!-- Скрипт настройки видео в модальном окне -->
+    <script src="./js/video-setup.js" type="module"></script>
+    <!-- Скрипт валидации формы buy -->
+    <script src="./js/validation-form.js" type="module"></script>
+    <!-- Скрипт Google Maps -->
+    <script async>
+      window.initMap = function () {
+        let element = document.getElementById('map');
+        const options = {
+          zoom: 5,
+          center: { lat: 41.797981, lng: -87.586858 }
+        };
+
+        let myMap = new google.maps.Map(element, options);
+
+        let markers = [
+          {
+            coordinates: { lat: 41.797981, lng: -87.586858 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Chicago</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 33.9600112, lng: -118.4379626 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">LA</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 40.7479666, lng: -73.986163316 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">NY</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 39.781282, lng: -86.1465297 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Indianapolis</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 48.2195999, lng: -101.3115012 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Minot</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 32.8212559, lng: -80.1105616 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Charleston</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 43.545397, lng: -105.117946 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Fremont County</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 44.2499924, lng: -114.4728538 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Idaho</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 35.0826103, lng: -106.8165629 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Albuquerque</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 44.970797, lng: -93.3315181 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Minneapolis</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 40.8007178, lng: -96.760768 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Lincoln</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 30.3079827, lng: -97.8934853 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Austin</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 36.1251958, lng: -115.3150834 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Las Vegas</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 44.2148704, lng: -120.799239 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Portland</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 33.5314448, lng: -86.9902206 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Birmingham</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 32.8208751, lng: -96.8716362 },
+            image: 'https://i.ibb.co/VLvMcnq/cafe.png',
+            info: '<p><b class="map-subtitle">Dallas</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 28.4807935, lng: -80.5488077 },
+            image: 'https://i.ibb.co/NLPxqWm/food-truck.png',
+            info: '<p><b class="map-subtitle">Cape Canaveral</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 38.653285, lng: -90.3835452 },
+            image: 'https://i.ibb.co/NLPxqWm/food-truck.png',
+            info: '<p><b class="map-subtitle">St. Louis</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 39.1987578, lng: -112.1585311 },
+            image: 'https://i.ibb.co/NLPxqWm/food-truck.png',
+            info: '<p><b class="map-subtitle">Holden</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: -65.2445403, lng: -64.2399281 },
+            image: 'https://i.ibb.co/NLPxqWm/food-truck.png',
+            info: '<p><b class="map-subtitle">Vernadsky Research Base - penguins out of line</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 45.9610278, lng: -109.6575471 },
+            image: 'https://i.ibb.co/NLPxqWm/food-truck.png',
+            info: '<p><b class="map-subtitle">Yellowstone River</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 38.8255663, lng: -97.7021552 },
+            image: 'https://i.ibb.co/NLPxqWm/food-truck.png',
+            info: '<p><b class="map-subtitle">Salina</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+          {
+            coordinates: { lat: 37.2970523, lng: -121.9574962 },
+            image: 'https://i.ibb.co/NLPxqWm/food-truck.png',
+            info: '<p><b class="map-subtitle">San Jose</b> <br>Monday - Friday <br><i>06:00 AM - 10:00 PM</i> <br>Saturday - Sunday <br><i>08:00 AM - 16:00 PM</i></p>'
+          },
+
+        ];
+
+        for (let i = 0; i < markers.length; i++) {
+          addMarker(markers[i]);
+        }
+
+        function addMarker(properties) {
+          let marker = new google.maps.Marker({
+            position: properties.coordinates,
+            map: myMap,
+          });
+
+          if (properties.image) {
+            marker.setIcon(properties.image);
+          }
+
+          if (properties.info) {
+            let InfoWindow = new google.maps.InfoWindow({
+              content: properties.info
+            });
+
+            marker.addListener('click', function () {
+              InfoWindow.open(myMap, marker);
+            })
+          }
+        }
+      }
+    </script>
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgUsCs0X_BkvnJDOyTL414HV-J-gikNaI&region=US&language=en&callback=initMap&v=weekly"></script>
+    <!-- Скрипт скроллбара -->
+    <script defer src="https://kit.fontawesome.com/76177da8e1.js" crossorigin="anonymous"></script>
+    <script defer src="./js/button-up.js"></script>
+    <!-- Скрипты read-more -->
+    <script src="./js/read-more-hero.js" type="module"></script>
+    <script src="./js/read-more-product.js" type="module"></script>
+    <!-- Скрипт слайдера -->
+    <script src="./js/slider.js"></script>
+    </body>
+</html>

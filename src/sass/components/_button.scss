@@ -1,0 +1,35 @@
+.button {
+  padding: 7px 13px;
+
+  @include font-size(8, 10);
+
+  background-color: var(--bgc-main);
+  color: var(--accent-color);
+  border: none;
+  border-radius: 22px;
+
+  transition: background-color 200ms var(--transition-function),
+    transform 200ms var(--transition-function);
+
+  &:hover,
+  &:focus {
+    transform: translateY(-3px);
+    background-color: var(--button-main-hover-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &--dark {
+    color: var(--text-fourth-color);
+    background-color: var(--accent-color);
+
+    &:hover,
+    &:focus {
+      background-color: var(--button-second-hover-color);
+    }
+  }
+}

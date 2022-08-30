@@ -1,0 +1,241 @@
+.products {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @include mq(tablet) {
+    padding-top: 122px;
+    padding-bottom: 112px;
+  }
+
+  @include mq(desktop) {
+    padding-top: 127px;
+    padding-bottom: 129px;
+  }
+}
+
+.products__list {
+  display: flex;
+  justify-content: center;
+  margin-top: 147px;
+
+  @include mq(mobile-only) {
+    flex-wrap: wrap;
+  }
+
+  @include mq(tablet) {
+    margin-top: 150px;
+  }
+
+  @include mq(desktop) {
+    margin-top: 259px;
+  }
+}
+
+.products__item {
+  position: relative;
+  height: auto;
+  padding: 158px 40px 44px;
+
+  text-align: center;
+
+  border-radius: 24px;
+
+  @include mq(mobile-only) {
+    max-width: 280px;
+    &:not(:last-child) {
+      margin-bottom: 127px;
+    }
+  }
+
+  @include mq(tablet) {
+    padding: 152px 11px 40px;
+    flex-basis: calc((100% - 40px) / 3);
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  @include mq(desktop) {
+    padding: 163px 44px 50px;
+    flex-basis: calc((100% - 54px) / 3);
+    &:not(:last-child) {
+      margin-right: 27px;
+    }
+  }
+}
+
+.products__item--first {
+  background-color: var(--bgc-third);
+}
+
+.products__item--second {
+  background-color: var(--bgc-fourth);
+}
+
+.products__item--third {
+  background-color: var(--bgc-fifth);
+}
+
+.products__title {
+  position: relative;
+  margin-bottom: 30px;
+  font-family: Titan One, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--text-fourth-color);
+  @include font-size(20, 23, 0.04);
+
+  @include mq(desktop) {
+    @include font-size(30, 34, 0.04);
+  }
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    top: -275px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 249px;
+    height: 252px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include mq(tablet) {
+      top: -260px;
+      width: 220px;
+      height: 226px;
+    }
+
+    @include mq(desktop) {
+      top: -370px;
+      width: 335px;
+      height: 335px;
+    }
+  }
+
+  &::after {
+    content: ' ';
+    display: block;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url('../images/product/points1x.png');
+    @include mq(retina) {
+      background-image: url('../images/product/points2x.png');
+    }
+
+    width: 26px;
+    height: 6px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+
+    @include mq(desktop) {
+      margin: 32px auto 0;
+    }
+  }
+}
+
+.products__title--first {
+  &::before {
+    @include mq(desktop) {
+      background-image: url('../images/product/ice-cream-x1.png');
+      @include mq(retina) {
+        background-image: url('../images/product/ice-cream-x2.png');
+      }
+    }
+
+    @include mq(tablet-only) {
+      background-image: url('../images/product/ice-cream-tab-x1.png');
+      @include mq(retina) {
+        background-image: url('../images/product/ice-cream-tab-x2.png');
+      }
+    }
+
+    @include mq(mobile-only) {
+      background-image: url('../images/product/ice-cream-mob-x1.png');
+      @include mq(retina) {
+        background-image: url('../images/product/ice-cream-mob-x2.png');
+      }
+    }
+  }
+}
+
+.products__title--second {
+  &::before {
+    @include mq(desktop) {
+      background-image: url('../images/product/ice-coffee-x1.png');
+      @include mq(retina) {
+        background-image: url('../images/product/ice-coffee-x2.png');
+      }
+    }
+
+    @include mq(tablet-only) {
+      background-image: url('../images/product/ice-coffee-tab-x1.png');
+      @include mq(retina) {
+        background-image: url('../images/product/ice-coffee-tab-x2.png');
+      }
+    }
+
+    @include mq(mobile-only) {
+      background-image: url('../images/product/ice-coffee-mob-x1.png');
+      @include mq(retina) {
+        background-image: url('../images/product/ice-coffee-mob-x2.png');
+      }
+    }
+  }
+}
+
+.products__title--third {
+  &::before {
+    @include mq(desktop) {
+      background-image: url('../images/product/milk-shake-x1.png');
+      @include mq(retina) {
+        background-image: url('../images/product/milk-shake-x2.png');
+      }
+    }
+    @include mq(tablet-only) {
+      background-image: url('../images/product/milk-shake-tab-x1.png');
+      @include mq(retina) {
+        background-image: url('../images/product/milk-shake-tab-x2.png');
+      }
+    }
+    @include mq(mobile-only) {
+      background-image: url('../images/product/milk-shake-mob-x1.png');
+      @include mq(retina) {
+        background-image: url('../images/product/milk-shake-mob-x2.png');
+      }
+    }
+  }
+}
+
+.products__text {
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: var(--text-fourth-color);
+  text-align: center;
+  @include font-size(14, 21, 0.04);
+
+  @include mq(tablet) {
+    margin-bottom: 40px;
+    @include font-size(14, 25, 0.04);
+  }
+
+  @include mq(desktop) {
+    margin-bottom: 62px;
+    @include font-size(16, 28, 0.04);
+  }
+}
+
+.products__btn {
+  margin: 0 auto;
+}
+
+.more {
+  display: none;
+}

@@ -1,0 +1,360 @@
+.contacts {
+  display: flex;
+
+  @include mq(mobile-only) {
+    padding-top: 43px;
+    padding-bottom: 56px;
+
+    background-image: linear-gradient(
+      to bottom,
+      var(--bgc-main) 127px,
+      var(--bgc-second) 84px,
+      var(--bgc-second)
+    );
+  }
+
+  @include mq(tablet) {
+    padding-top: 60px;
+    padding-bottom: 82px;
+
+    background-image: linear-gradient(
+      to bottom,
+      var(--bgc-main) 138px,
+      var(--bgc-second) 78px,
+      var(--bgc-second)
+    );
+  }
+  @include mq(desktop) {
+    padding-top: 66px;
+    padding-bottom: 82px;
+
+    background-image: linear-gradient(to bottom, var(--bgc-main) 19%, var(--bgc-second) 19%);
+  }
+}
+
+.contacts__thumb {
+  margin: 0 auto;
+
+  @include mq(desktop) {
+    background-image: url('../images/contacts/contacts.png');
+    background-repeat: no-repeat;
+    background-position: 0 100px;
+    background-size: contain;
+  }
+
+  @include mq(retina) {
+    background-image: url('../images/contacts/contacts@2x.png');
+    background-repeat: no-repeat;
+    background-position: 0 100px;
+    background-size: contain;
+  }
+}
+
+.contacts__main-title {
+  @include visuallity-hidden;
+}
+
+.contacts-list {
+  @include mq(tablet) {
+    display: flex;
+  }
+}
+
+.contacts__item {
+  background: var(--bgc-main);
+
+  box-shadow: var(--box-shadow);
+  border-radius: 24px;
+  transition: transform var(--transition-time) var(--transition-function);
+
+  @include mq(mobile-only) {
+    padding: 43px 20px 43px 20px;
+    margin: 0 auto;
+    max-width: 220px;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  @include mq(tablet-only) {
+    padding: 50px 32px 50px 31px;
+
+    flex-basis: calc((100% - 40px) / 3);
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+
+  @include mq(desktop) {
+    max-width: 330px;
+    padding: 51px 40px 62px 43px;
+
+    flex-basis: calc((100% - 60px) / 3);
+
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    @include mq(desktop) {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.contacts__category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80px;
+  margin-bottom: 25px;
+
+  font-weight: 500;
+  @include font-size(12, 22.32, 0.04);
+  color: var(--text-fourth-color);
+
+  background-color: var(--bgc-fourth);
+  border-radius: 4px;
+
+  @media screen and (max-width: 767px) {
+    height: 16px;
+  }
+
+  @include mq(tablet) {
+    width: 73px;
+    height: 28px;
+    margin-bottom: 30px;
+
+    @include font-size(16, 29.76);
+  }
+}
+
+.contacts__category--green {
+  min-width: 130px;
+
+  background: var(--bgc-fifth);
+
+  @media screen and (max-width: 767px) {
+    height: 16px;
+  }
+
+  @include mq(tablet) {
+    width: 138px;
+  }
+}
+
+.contacts__title {
+  margin-bottom: 10px;
+
+  font-weight: 500;
+  @include font-size(12, 22, 0.04);
+  color: var(--text-main-color);
+
+  @include mq(tablet) {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  @include mq(desktop) {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+
+.contacts__text {
+  font-weight: 500;
+  color: var(--text-second-color);
+
+  @include mq(mobile-only) {
+    margin-bottom: 25px;
+
+    @include font-size(12, 18);
+  }
+
+  @include mq(tablet-only) {
+    margin-bottom: 30px;
+
+    @include font-size(14, 23);
+  }
+
+  @include mq(desktop) {
+    margin-bottom: 24px;
+
+    @include font-size(16, 29.28, 0.04);
+  }
+}
+.contacts-date {
+  border-top: 1px solid var(--figure-line-color);
+  border-bottom: 1px solid var(--figure-line-color);
+
+  @include mq(mobile-only) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  @include mq(tablet-only) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @include mq(desktop) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+.contacts-date__list-top {
+  margin-bottom: 10px;
+
+  @include mq(tablet) {
+    margin-bottom: 15px;
+  }
+
+  @include mq(desktop) {
+    margin-bottom: 16px;
+  }
+}
+
+.contacts-date__days {
+  font-weight: 500;
+  @include font-size(12, 22);
+  color: var(--text-main-color);
+
+  @include mq(tablet) {
+    font-size: 14px;
+  }
+
+  @include mq(desktop) {
+    font-size: 16px;
+    letter-spacing: 0.04em;
+  }
+}
+
+.contacts-date__time {
+  font-weight: 500;
+  @include font-size(12, 22);
+  color: var(--text-third-color);
+
+  @include mq(tablet) {
+    font-size: 14px;
+  }
+
+  @include mq(desktop) {
+    font-style: 16px;
+  }
+}
+
+.contacts-link {
+  margin-top: 25px;
+}
+
+.contacts-link__connect {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-second-color);
+
+  @include mq(tablet) {
+    font-size: 14px;
+    line-height: 1.83;
+  }
+
+  @include mq(desktop) {
+    font-size: 16px;
+    line-height: 1.83;
+  }
+}
+
+.contacts-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 54px;
+
+  @include mq(tablet) {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 81px;
+  }
+
+  @include mq(desktop) {
+    flex-direction: row;
+    margin-top: 86px;
+  }
+}
+
+.contacts-btn__item {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  @include mq(tablet) {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.contacts-btn__link {
+  min-width: 161px;
+  height: 44px;
+  font-weight: 700;
+  @include font-size(16, 21);
+}
+
+.contacts-btn__link-red {
+  @include mq(tablet) {
+    min-width: 191px;
+    height: 45px;
+  }
+
+  @include mq(desktop) {
+    min-width: 198px;
+    height: 45px;
+  }
+}
+
+.contacts-btn__icon-white {
+  margin-left: 8px;
+  width: 10px;
+  height: 10px;
+
+  stroke: currentColor;
+  fill: var(--bgc-main);
+
+  @include mq(tablet) {
+    margin-left: 13px;
+  }
+}
+
+.contacts-btn__link-white {
+  @include mq(tablet) {
+    min-width: 175px;
+    height: 45px;
+  }
+
+  @include mq(desktop) {
+    min-width: 180px;
+  }
+}
+
+.contacts-btn__icon-red {
+  width: 10px;
+  height: 10px;
+  margin-left: 13px;
+
+  stroke: currentColor;
+  fill: var(--accent-color);
+
+  @include mq(tablet) {
+    margin-left: 13.6px;
+  }
+}

@@ -1,0 +1,31 @@
+@import './base/normalize';
+@import './base/fonts';
+@import './base/disharges';
+
+@import './utils/variables';
+@import './utils/mixins';
+
+@import './components/base-components';
+@import './components/title';
+@import './components/pre-title';
+@import './components/button';
+@import './components/button-arrow';
+@import './components/button-close';
+@import './components/button-up';
+
+@import './layout/header';
+@import './layout/hero';
+@import './layout/products';
+@import './layout/about';
+@import './layout/advantages';
+@import './layout/gallery';
+@import './layout/customer-reviews';
+@import './layout/contacts';
+@import './layout/footer';
+
+@import './components/backdrop';
+@import './components/modal';
+@import './components/modal-buy';
+@import './components/modal-video';
+@import './components/modal-location';
+@import './components/modal-franchise';
